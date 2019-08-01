@@ -1,0 +1,45 @@
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mBlorgh::Article Load (0.8ms)[0m  [1m[34mSELECT "blorgh_articles".* FROM "blorgh_articles" WHERE "blorgh_articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBlorgh::Article Load (0.2ms)[0m  [1m[34mSELECT "blorgh_articles".* FROM "blorgh_articles" WHERE "blorgh_articles"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBlorgh::Article Create (1.6ms)[0m  [1m[32mINSERT INTO "blorgh_articles" ("title", "text", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Ejemplo"], ["text", "ejemplo de articulo"], ["created_at", "2019-08-01 20:25:48.256440"], ["updated_at", "2019-08-01 20:25:48.256440"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBlorgh::Article Load (0.2ms)[0m  [1m[34mSELECT "blorgh_articles".* FROM "blorgh_articles" WHERE "blorgh_articles"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  [1m[36mBlorgh::Article Load (0.4ms)[0m  [1m[34mSELECT "blorgh_articles".* FROM "blorgh_articles" WHERE "blorgh_articles"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  [1m[36mBlorgh::Article Load (0.3ms)[0m  [1m[34mSELECT "blorgh_articles".* FROM "blorgh_articles" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mBlorgh::Article Load (0.3ms)[0m  [1m[34mSELECT "blorgh_articles".* FROM "blorgh_articles" WHERE "blorgh_articles"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  [1m[36mBlorgh::Article Load (0.4ms)[0m  [1m[34mSELECT "blorgh_articles".* FROM "blorgh_articles" WHERE "blorgh_articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Started GET "/" for ::1 at 2019-08-01 15:41:12 -0500
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/galilealopez/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/railties-6.0.0.rc2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/galilealopez/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/railties-6.0.0.rc2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 10.7ms | Allocations: 423)
+DEPRECATION WARNING: Rails 6.1 will return Content-Type header without modification. If you want just the MIME type, please use `#media_type` instead. (called from content_type at /Users/galilealopez/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/actionpack-6.0.0.rc2/lib/action_controller/metal.rb:150)
+Completed 200 OK in 21ms (Views: 17.4ms | ActiveRecord: 0.0ms | Allocations: 2322)
+
+
+Started GET "/blorgh" for ::1 at 2019-08-01 15:41:23 -0500
+Processing by Blorgh::ArticlesController#index as HTML
+  Rendering /Users/galilealopez/Documents/engine-ruby-practice/app/views/blorgh/articles/index.html.erb within layouts/blorgh/application
+  [1m[36mBlorgh::Article Load (1.6ms)[0m  [1m[34mSELECT "blorgh_articles".* FROM "blorgh_articles"[0m
+  Rendered /Users/galilealopez/Documents/engine-ruby-practice/app/views/blorgh/articles/index.html.erb within layouts/blorgh/application (Duration: 28.7ms | Allocations: 6447)
+DEPRECATION WARNING: Rails 6.1 will return Content-Type header without modification. If you want just the MIME type, please use `#media_type` instead. (called from content_type at /Users/galilealopez/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/actionpack-6.0.0.rc2/lib/action_controller/metal.rb:150)
+Completed 200 OK in 352ms (Views: 296.0ms | ActiveRecord: 2.4ms | Allocations: 314480)
+
+
+Started GET "/blorgh/articles/new" for ::1 at 2019-08-01 15:41:28 -0500
+Processing by Blorgh::ArticlesController#new as HTML
+  Rendering /Users/galilealopez/Documents/engine-ruby-practice/app/views/blorgh/articles/new.html.erb within layouts/blorgh/application
+  Rendered /Users/galilealopez/Documents/engine-ruby-practice/app/views/blorgh/articles/_form.html.erb (Duration: 63.4ms | Allocations: 4844)
+  Rendered /Users/galilealopez/Documents/engine-ruby-practice/app/views/blorgh/articles/new.html.erb within layouts/blorgh/application (Duration: 67.4ms | Allocations: 5317)
+DEPRECATION WARNING: Rails 6.1 will return Content-Type header without modification. If you want just the MIME type, please use `#media_type` instead. (called from content_type at /Users/galilealopez/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/actionpack-6.0.0.rc2/lib/action_controller/metal.rb:150)
+Completed 200 OK in 152ms (Views: 150.6ms | ActiveRecord: 0.0ms | Allocations: 16113)
+
+
